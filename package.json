@@ -1,0 +1,41 @@
+{
+  "name": "theme.js",
+  "version": "1.0.0",
+  "description": "simple light and dark themes for any website",
+  "browser": "dist/theme.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "npm i && gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Craig Buckler",
+  "homepage": "https://github.com/craigbuckler/theme.js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigbuckler/theme.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/craigbuckler/theme.js/issues"
+  },
+  "keywords": [
+    "JavaScript",
+    "CSS",
+    "theme"
+  ],
+  "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "ie 11"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-terser": "^1.2.0",
+    "toggled.js": "^1.1.0"
+  }
+}

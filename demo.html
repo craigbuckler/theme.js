@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>theme.js demonstration</title>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="src/demo.css">
+<link rel="stylesheet" href="src/css/theme.css">
+</head>
+<body>
+
+<main>
+
+  <article>
+
+    <h1>theme.js</h1>
+
+    <p><a href="https://github.com/craigbuckler/theme.js"><strong>GitHub</strong></a> | <a href="https://www.npmjs.com/package/theme.js"><strong>npm</strong></a> | <a href="https://gum.co/themejs"><strong>donate</strong></a> | <a href="https://twitter.com/craigbuckler">@craigbuckler</a> | <a href="https://craigbuckler.com/">craigbuckler.com</a></p>
+
+    <p>Simple animated light and dark theme for any website inspired by <a href="https://dev.to/wgao19/night-mode-with-mix-blend-mode-difference-23lm">Night Mode with Mix Blend Mode: Difference</a> by <a href="https://twitter.com/wgao19">@wgao19</a>.</p>
+
+    <p>Please use the code as you wish. <a href="https://twitter.com/craigbuckler">Tweet me @craigbuckler</a> if you find it useful and <a href="https://gum.co/themejs">donate toward development</a> if you use it commercially.</p>
+
+    <ul>
+      <li>retains theme state between page loads</li>
+      <li>no external dependencies - works with any framework</li>
+      <li>fast and lightweight: 1,000 bytes of JavaScript, 330 bytes of CSS</li>
+      <li>easy to configure in HTML and CSS</li>
+      <li>works in all modern browsers</li>
+      <li>fails gracefully in browsers without support</li>
+      <li>includes <a href="https://github.com/craigbuckler/toggled.js">toggled.js</a> for simple UI toggle switching</li>
+    </ul>
+
+    <p>Click to test...</p>
+
+    <p data-toggled="themejs">theme</p>
+
+    <p><em>(Note that some websites may have incompatible CSS or require changes to theme.css.)</em></p>
+
+    <ul>
+    </ul>
+
+    <h2>Usage</h2>
+
+    <p>The page must load the CSS and JavaScript. It can be placed anywhere but, typically, the CSS is loaded in the <code>&lt;head&gt;</code> and the JS is loaded just before the closing <code>&lt;/body&gt;</code> tag:</p>
+
+    <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/theme.js/dist/theme.css&quot;&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/theme.js/dist/theme.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+    <p>CDN URLs are shown above but you can also <code>npm i theme.js</code> to install via npm and use a bundler.</p>
+
+    <p>Now create a theme toggle switch on your page by adding a <code>data-toggled="themejs"</code> attribute to any element, e.g.</p>
+
+    <pre><code>&lt;p data-toggled=&quot;themejs&quot;&gt;theme&lt;/p&gt;</code></pre>
+
+    <p>This can be styled however you prefer but it should be hidden by default and only shown then theme.js is active and a <code>themejs-active</code> class has applied to the <code>body</code> tag, e.g.</p>
+
+    <pre><code>[data-toggled=&quot;themejs&quot;] {&#10;  cursor: pointer;&#10;  display: none;&#10;}&#10;&#10;.themejs-active [data-toggled=&quot;themejs&quot;] {&#10;  display: block;&#10;}</code></pre>
+
+    <p>The element can now be clicked to toggle themes.</p>
+
+    <h2>Advanced use</h2>
+
+    <p>The following elements are added to the page so they can be altered as necessary:</p>
+
+    <ul>
+      <li><code>body.themejs-active</code> - applied when theme.js is supported</li>
+      <li><code>body.themejs</code> - the alternative theme has been applied</li>
+      <li><code>div.themejs-back</code> - background element, normally white</li>
+      <li><code>div.themejs-overlay</code> - background overlay, normally white but can be changed</li>
+    </ul>
+
+    <p>Any elements that should not be reversed - <em>such as images</em> - should have the CSS <code>isolation: isolate;</code> property applied, e.g.</p>
+
+    <pre><code>img, svg { isolation: isolate; }</code></pre>
+
+    <p>This fish will remain green (<code>#393</code>) regardless of which theme is used:</p>
+
+    <svg width="200" fill="#393" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 .315 .196" fill-rule="evenodd" clip-rule="evenodd"><path d="M.238.074c.007.01.013.015.024.021C.212.135.153.16.088.142a.154.154 0 0 1-.045.054.1.1 0 0 1-.004-.06A.087.087 0 0 1 0 .092C.028.085.05.09.074.105.11.093.124.052.152.03c.045-.037.106-.02.155 0 .007.005.01.011.007.02a.137.137 0 0 1-.044.04.05.05 0 0 1-.032-.015zM.258.03a.01.01 0 0 1 .013.004.01.01 0 0 1-.005.013.01.01 0 0 1-.013-.004A.01.01 0 0 1 .258.03z"/><path d="M.18.01A.102.102 0 0 0 .133 0C.114.027.09.047.08.08l.02.004C.117.067.131.042.15.026A.095.095 0 0 1 .182.01zM.106.15c.001.008.005.033.013.036A.16.16 0 0 1 .154.149a.171.171 0 0 1-.048 0zM.183.142l.015.031C.205.155.218.136.227.123a.227.227 0 0 1-.044.02zM.26.033a.007.007 0 0 1 .008.003.007.007 0 0 1-.003.008.007.007 0 0 1-.01-.003A.007.007 0 0 1 .26.033z"/></svg>
+
+    <p data-toggled="themejs">theme</p>
+
+  </article>
+
+</main>
+
+<script src="node_modules/toggled.js/dist/toggled.js"></script>
+<script src="src/js/theme.js"></script>
+</body>
+</html>
