@@ -1,6 +1,6 @@
 {
   "name": "theme.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple light and dark themes for any website",
   "browser": "dist/theme.js",
   "files": [
@@ -36,6 +36,6 @@
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^8.0.0",
     "gulp-terser": "^1.2.0",
-    "toggled.js": "^1.1.0"
+    "toggled.js": "^1.1.1"
   }
 }
