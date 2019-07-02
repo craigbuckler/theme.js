@@ -67,6 +67,10 @@ img, svg { isolation: isolate; }
 
 ## Version history
 
+### v1.0.1, 2 July 2019
+
+* toggled.js update
+
 ### v1.0.0, 1 July 2019
 
 * initial release
